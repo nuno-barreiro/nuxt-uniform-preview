@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "start": "run-p start:func start:nuxt",
+    "start:func": "cd api && yarn start",
+    "start:nuxt": "nuxt generate && nuxt start",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:prettier",
     "lintfix": "prettier --write --list-different .",
-    "nuxt:static": "yarn generate && yarn start"
+    "postinstall": "cd api && yarn install"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1"
   }
 }
