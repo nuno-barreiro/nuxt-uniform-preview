@@ -52,8 +52,8 @@ module.exports = async function (context, req) {
     const previewClient = createClient({
       space: ctfSpace,
       environment: 'master',
-      accessToken: process.env.CONTENTFUL_DELIVERY_API_KEY || '',
-      host: 'cdn.contentful.com',
+      accessToken: process.env.CONTENTFUL_PREVIEW_API_KEY || '',
+      host: 'preview.contentful.com',
     })
 
     const clientList = new ContentfulClientList({

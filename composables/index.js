@@ -1,9 +1,9 @@
-const {
+import {
   createEventBus,
   subscribeToComposition,
   CANVAS_DRAFT_STATE,
   CANVAS_PUBLISHED_STATE,
-} = import('@uniformdev/canvas')
+} from '@uniformdev/canvas'
 
 export const useComposition = async (slug, { query, $axios, env, nuxtState }) => {
   const compositionUrl = `${env.COMPOSITION_API_URL}/?canvasSlug=${slug}&preview=${query.preview || false}`;
