@@ -2,6 +2,7 @@
   <div>
     <composition :composition="composition"> 
       <h1>{{ composition.data.page[0].fields.title }}</h1>
+      <slot-content slotName="navigation" />
     </composition>
   </div>
 </template>
