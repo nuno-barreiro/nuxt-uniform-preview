@@ -22,7 +22,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    "~/plugins/preview.client.js"
+    '~/plugins/fetch.server.js',
+    '~/plugins/preview.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,6 +36,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@uniformdev/canvas-nuxt',
+      {
+        apiKey: process.env.UNIFORM_API_KEY,
+        projectId: process.env.UNIFORM_PROJECT_ID,
+      },
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -49,6 +57,6 @@ export default {
   // Environment variables
   env: {
     UNIFORM_PROJECT_ID: process.env.UNIFORM_PROJECT_ID,
-    COMPOSITION_API_URL: process.env.COMPOSITION_API_URL
-  }
+    COMPOSITION_API_URL: process.env.COMPOSITION_API_URL,
+  },
 }

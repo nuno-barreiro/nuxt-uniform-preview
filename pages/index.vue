@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Homepage</h1>
+    <composition :composition="composition"> 
+      <h1>{{ composition.data.page[0].fields.title }}</h1>
+    </composition>
   </div>
 </template>
 
@@ -8,7 +10,11 @@
 export default {
   async asyncData(nuxtContext) {
     const { useComposition } = await import('~/composables')
-    return useComposition('/home', nuxtContext)
+    const { composition } = await useComposition('/home', nuxtContext)
+
+    return {
+      composition,
+    }
   },
 }
 </script>
