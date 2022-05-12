@@ -1,0 +1,17 @@
+{
+  "name": "nuxt-uniform-preview-serverless",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
+    "@uniformdev/canvas": "^16.0.0",
+    "@uniformdev/canvas-contentful": "^16.0.0",
+    "contentful": "^9.1.28",
+    "isomorphic-fetch": "^3.0.0"
+  },
+  "devDependencies": {}
+}

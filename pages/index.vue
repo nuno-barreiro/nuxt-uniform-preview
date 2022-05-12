@@ -1,9 +1,14 @@
 <template>
-  <Tutorial />
+  <div>
+    <h1>Homepage</h1>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  async asyncData(nuxtContext) {
+    const { useComposition } = await import('~/composables')
+    return useComposition('/home', nuxtContext)
+  },
 }
 </script>

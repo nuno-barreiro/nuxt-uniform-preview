@@ -45,4 +45,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Environment variables
+  env: {
+    UNIFORM_PROJECT_ID: process.env.UNIFORM_PROJECT_ID,
+    COMPOSITION_API_URL: process.env.COMPOSITION_API_URL
+  }
 }
