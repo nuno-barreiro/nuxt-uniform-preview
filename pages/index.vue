@@ -1,6 +1,6 @@
 <template>
   <div>
-    <composition :composition="composition"> 
+    <composition :key="key" :composition="composition"> 
       <h1>{{ composition.data.page[0].fields.title }}</h1>
       <slot-content slotName="navigation" />
     </composition>
@@ -8,14 +8,16 @@
 </template>
 
 <script>
+let key = 1
+
 export default {
   async asyncData(nuxtContext) {
     const { useComposition } = await import('~/composables')
     const { composition } = await useComposition('/home', nuxtContext)
 
-    return {
-      composition,
-    }
+    key++
+    
+    return { composition, key }
   },
 }
 </script>
